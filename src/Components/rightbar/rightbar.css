@@ -1,0 +1,35 @@
+.rightbar{
+    flex: 3;
+    position: sticky;
+    top: 50px;
+}
+.rightbareWrapper{
+    padding: 20px 20px 0px 0px;
+}
+.birthdayContainer{
+    display: flex;
+    align-items: center;
+}
+.birthdayImg{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px; 
+}
+.birthdayText{
+    font-weight: 400;
+    font-size: 15px;
+}
+.rightbarAds{
+    width: 100%;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+.rightbartitle{
+    margin-bottom: 20px;
+}
+.rightbarFriendList{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+}

@@ -1,0 +1,3 @@
+14-12-2021
+    instakll all requitrement lile
+    - npm i express monggose nodemon dotenv morgan  
