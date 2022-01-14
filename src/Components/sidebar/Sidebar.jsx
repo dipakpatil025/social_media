@@ -4,6 +4,7 @@ import VideocamIcon from '@mui/icons-material/Videocam';
 import React from 'react'
 import "./sidebar.css"
 import CloseFriends from '../CloseFrideds/CloseFriends';
+import {Users} from "../../dummyData";
 export default function Sidebar() {
     return (
         <div className='sidebar'>
@@ -54,8 +55,11 @@ export default function Sidebar() {
                 <button className='sizebarbutton'>Show More</button>
                 <hr className="sidebarHr" />
                 <ul className="sidebarfriendsList">
-                   
-                    <CloseFriends/>
+                   {
+                       Users.map(u=>(
+                           <CloseFriends key={u.id} friends={u}/>
+                       ))
+                   }
                 </ul>
             </div>
         </div>

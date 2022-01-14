@@ -33,3 +33,37 @@
     list-style: none;
 
 }
+.rightbarInfo{
+margin-bottom: 30px;
+}
+.rightbarInfiItem{
+    margin-bottom: 10px;
+}
+.righbarinfoKey{
+    font-weight: 500;
+    margin-right: 15px;
+    color: #555;
+}
+.righbarinfoValue{
+    font-weight: 400;
+
+}
+.userfollowings{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.userfollowing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;    
+}
+.userfollowingImg{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px ;
+}

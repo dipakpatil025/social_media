@@ -5,11 +5,14 @@ import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 export default function ShareComponet() {
+    
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     return (
         <div className='share'>
+            
             <div className="sharewrapper">
                 <div className="shareTop">
-                    <img src="assets/person/1.jpeg" alt="" className='shareProfilePicture' />
+                    <img src={PF+"/person/1.jpeg"} alt="" className='shareProfilePicture' />
                     <input placeholder="What's in your mind diapk ?" className="shareInput" />
                 </div>
                 <hr className="shareHr" />

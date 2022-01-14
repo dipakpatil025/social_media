@@ -89,7 +89,7 @@ exports.get = async (req, res) => {
 exports.timeline = async (req, res) => {
     try {
 
-        const currentUser = await User.findById(req.body.userid);
+        const currentUser = await User.findById(req.params.userid);
         const userPost = await Post.find({ userId: currentUser._id });
         const friendsPost = await Promise.all(
             currentUser.followings.map(friendId => {
@@ -106,6 +106,17 @@ exports.timeline = async (req, res) => {
             // console.log("->", friendId)
 
         res.status(200).json(userPost.concat(...friendsPost).concat(...friendsPostfollowers));
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+    // res.send("ok");
+};
+
+exports.profile = async (req, res) => {
+    try {
+        const user = await User.findOne({username:req.params.username})
+        const post = await Post.find({userId:user._id});
+        res.status(200).json(post);
     } catch (error) {
         res.status(500).json({ success: false, message: error.message });
     }
