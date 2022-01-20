@@ -53,7 +53,7 @@ exports.deletePost = async (req, res) => {
     // res.send("ok");
 }
 
-// like
+//  ke
 exports.like = async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
@@ -99,11 +99,11 @@ exports.timeline = async (req, res) => {
         )
         const friendsPostfollowers = await Promise.all(
             currentUser.followers.map(friendId => {
-                
+
                 return Post.find({ userId: friendId });
             })
-            )
-            // console.log("->", friendId)
+        )
+        // console.log("->", friendId)
 
         res.status(200).json(userPost.concat(...friendsPost).concat(...friendsPostfollowers));
     } catch (error) {
@@ -114,8 +114,11 @@ exports.timeline = async (req, res) => {
 
 exports.profile = async (req, res) => {
     try {
-        const user = await User.findOne({username:req.params.username})
-        const post = await Post.find({userId:user._id});
+
+        console.log(req.params);
+        const user = await User.findOne({ username: req.params.username })
+        const post = await Post.find({ userId: user._id });
+        console.log(post);
         res.status(200).json(post);
     } catch (error) {
         res.status(500).json({ success: false, message: error.message });

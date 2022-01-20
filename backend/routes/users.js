@@ -11,11 +11,13 @@ router.route("/:id").put(update);
 
 // Dlete User
 router.route("/:id").delete(deleteUser);
+
 // Get A Users
-router.route("/:id").get(getUser);
+router.route("/").get(getUser);
 
 // Follow A user
 router.route("/:id/follow").put(follow);
+
 // Unfollow A User
 router.route("/:id/unfollow").put(unfollow);
 

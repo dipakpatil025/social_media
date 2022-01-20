@@ -25,12 +25,13 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
     try {
         const user = await User.findOne({ email: req.body.email });
-        !user && res.status(404).json("user not found");
+
+        if (user === null) res.status(404).json({ error: "user not found" });
+        console.log(user);
 
         console.log(user.password);
         const validPass = await bcrypt.compare(req.body.password, user.password);
-        console.log("here");
-        !validPass && res.status(400).json("wrong password");
+        if (validPass === null) res.status(400).json({ error: "wrong password" });
 
         res.status(200).json(user);
     } catch (error) {

@@ -18,7 +18,7 @@ const UserSchema = mongoose.Schema({
         type: String,
         require: true,
         min: 6,
-        select: false
+        // select: false
 
     },
     profilePicture: {

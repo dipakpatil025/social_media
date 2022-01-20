@@ -1,0 +1,43 @@
+Date : 2022-01-19 23:32:12
+Directory : d:\REACT JS\Projects\social_media\backend
+Total : 13 files,  2195 codes, 36 comments, 89 blanks, all 2320 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          2 |      1,830 |          0 |          2 |      1,832 |
+| JavaScript |         11 |        365 |         36 |         87 |        488 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                           | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                              |         13 |      2,195 |         36 |         89 |      2,320 |
+| DB                                                             |          1 |          9 |          2 |          0 |         11 |
+| controllers                                                    |          3 |        213 |         24 |         58 |        295 |
+| middware                                                       |          1 |          0 |          0 |          1 |          1 |
+| models                                                         |          2 |         94 |          2 |          6 |        102 |
+| routes                                                         |          3 |         27 |          6 |         16 |         49 |
++----------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                       | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\REACT JS\Projects\social_media\backend\DB\db.js             | JavaScript |          9 |          2 |          0 |         11 |
+| d:\REACT JS\Projects\social_media\backend\controllers\auth.js  | JavaScript |         30 |          2 |         10 |         42 |
+| d:\REACT JS\Projects\social_media\backend\controllers\post.js  | JavaScript |         91 |         12 |         22 |        125 |
+| d:\REACT JS\Projects\social_media\backend\controllers\users.js | JavaScript |         92 |         10 |         26 |        128 |
+| d:\REACT JS\Projects\social_media\backend\index.js             | JavaScript |         22 |          2 |          6 |         30 |
+| d:\REACT JS\Projects\social_media\backend\middware\JWTAuth.js  | JavaScript |          0 |          0 |          1 |          1 |
+| d:\REACT JS\Projects\social_media\backend\models\Post.js       | JavaScript |         21 |          0 |          2 |         23 |
+| d:\REACT JS\Projects\social_media\backend\models\Users.js      | JavaScript |         73 |          2 |          4 |         79 |
+| d:\REACT JS\Projects\social_media\backend\package-lock.json    | JSON       |      1,808 |          0 |          1 |      1,809 |
+| d:\REACT JS\Projects\social_media\backend\package.json         | JSON       |         22 |          0 |          1 |         23 |
+| d:\REACT JS\Projects\social_media\backend\routes\auth.js       | JavaScript |          7 |          0 |          4 |         11 |
+| d:\REACT JS\Projects\social_media\backend\routes\post.js       | JavaScript |         11 |          0 |          2 |         13 |
+| d:\REACT JS\Projects\social_media\backend\routes\users.js      | JavaScript |          9 |          6 |         10 |         25 |
+| Total                                                          |            |      2,195 |         36 |         89 |      2,320 |
++----------------------------------------------------------------+------------+------------+------------+------------+------------+

@@ -1,0 +1,15 @@
+"filename", "language", "JSON", "JavaScript", "comment", "blank", "total"
+"d:\REACT JS\Projects\social_media\backend\DB\db.js", "JavaScript", 0, 9, 2, 0, 11
+"d:\REACT JS\Projects\social_media\backend\controllers\auth.js", "JavaScript", 0, 30, 2, 10, 42
+"d:\REACT JS\Projects\social_media\backend\controllers\post.js", "JavaScript", 0, 91, 12, 22, 125
+"d:\REACT JS\Projects\social_media\backend\controllers\users.js", "JavaScript", 0, 92, 10, 26, 128
+"d:\REACT JS\Projects\social_media\backend\index.js", "JavaScript", 0, 22, 2, 6, 30
+"d:\REACT JS\Projects\social_media\backend\middware\JWTAuth.js", "JavaScript", 0, 0, 0, 1, 1
+"d:\REACT JS\Projects\social_media\backend\models\Post.js", "JavaScript", 0, 21, 0, 2, 23
+"d:\REACT JS\Projects\social_media\backend\models\Users.js", "JavaScript", 0, 73, 2, 4, 79
+"d:\REACT JS\Projects\social_media\backend\package-lock.json", "JSON", 1808, 0, 0, 1, 1809
+"d:\REACT JS\Projects\social_media\backend\package.json", "JSON", 22, 0, 0, 1, 23
+"d:\REACT JS\Projects\social_media\backend\routes\auth.js", "JavaScript", 0, 7, 0, 4, 11
+"d:\REACT JS\Projects\social_media\backend\routes\post.js", "JavaScript", 0, 11, 0, 2, 13
+"d:\REACT JS\Projects\social_media\backend\routes\users.js", "JavaScript", 0, 9, 6, 10, 25
+"Total", "-", 1830, 365, 36, 89, 2320

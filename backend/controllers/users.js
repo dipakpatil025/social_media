@@ -11,7 +11,10 @@ exports.home = (req, res) => {
 
 // Update User
 exports.update = async (req, res) => {
+
     // console.log(req.user);
+    
+    
     if (req.body.userId === req.params.id || req.body.isAdmin) {
         try {
             if (req.body.password) {
@@ -52,12 +55,19 @@ exports.deleteUser = async (req, res) => {
 }
 
 // Get A Users
+// Localhost:3000/user?userId=1234
+// Localhost:3000/user?username=test
 exports.getUser = async (req, res) => {
-
+    const userId = req.query.userId;
+    const username = req.query.username;
     try {
-
-        const user = await User.findById(req.params.id);
-        res.status(200).json(user)
+        console.log("heeeeeeeeheeeeeeee");
+        
+        const user = (userId)
+            ? await User.findOne({ userId: userId })
+            : await User.findOne({ username: username });
+        
+            res.status(200).json(user)
     } catch (error) {
 
         res.status(403).json({ success: false, message: error.message });

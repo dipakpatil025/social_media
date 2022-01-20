@@ -2,14 +2,14 @@ import React from 'react'
 import "./rightbar.css"
 import { Users } from "../../dummyData";
 import OnlineFriends from '../OnlineFriends/OnlineFriends';
-export default function RightBar({ profile }) {
+export default function RightBar({ user }) {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
     const HomerighrBar = () => {
         return (
             <>
                 <div className="birthdayContainer">
-                    <img src="assets/gift.png" alt="" className='birthdayImg' />
+                    <img src={PF + "gift.png"} alt="" className='birthdayImg' />
                     <span className="birthdayText"><b> Tej Fido </b> and <b> 3 other friends </b>have a birthday today</span>
                 </div>
                 <img src="assets/ad.png" alt="" className="rightbarAds" />
@@ -34,18 +34,18 @@ export default function RightBar({ profile }) {
                 <div className="rightbarInfo">
 
                     <div className="rightbarInfiItem">
-                        <spna className="righbarinfoKey">City:</spna>
-                        <spna className="righbarinfoValue"> York</spna>
+                        <span className="righbarinfoKey">City:</span>
+                        <span className="righbarinfoValue"> {user.city}</span>
                     </div>
 
                     <div className="rightbarInfiItem">
-                        <spna className="righbarinfoKey">From:</spna>
-                        <spna className="righbarinfoValue">Abc </spna>
+                        <span className="righbarinfoKey">From:</span>
+                        <span className="righbarinfoValue">{user.from} </span>
                     </div>
 
                     <div className="rightbarInfiItem">
-                        <spna className="righbarinfoKey">Relationship:</spna>
-                        <spna className="righbarinfoValue">Single</spna>
+                        <span className="righbarinfoKey">Relationship:</span>
+                        <span className="righbarinfoValue">{user.relationship===1 ? "Single" : user.relationship === 3 ? "Married" :"-" }</span>
                     </div>
                 </div>
                 <h3 className='rightbartitle'>User Friends</h3>
@@ -56,21 +56,7 @@ export default function RightBar({ profile }) {
                         <span className="userfollwingnams">John Ceaser</span>
                     </div>
 
-                    <div className="userfollowing">
-                        <img src={`${PF}person/2.jpeg`} alt="" className='userfollowingImg' />
-                        <span className="userfollwingnams">John Ceaser</span>
-                    </div>
-
-                    <div className="userfollowing">
-                        <img src={`${PF}person/3.jpeg`} alt="" className='userfollowingImg' />
-                        <span className="userfollwingnams">John Ceaser</span>
-                    </div>
-
-                    <div className="userfollowing">
-                        <img src={`${PF}person/4.jpeg`} alt="" className='userfollowingImg' />
-                        <span className="userfollwingnams">John Ceaser</span>
-                    </div>
-
+                  
                 </div>
             </>
         )
@@ -80,7 +66,7 @@ export default function RightBar({ profile }) {
 
         <div className='rightbar'>
             <div className="rightbareWrapper">
-                {profile? <ProfileRightbar /> :<HomerighrBar/> 
+                {user? <ProfileRightbar /> :<HomerighrBar/> 
             }
             </div>
         </div>
