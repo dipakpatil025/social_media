@@ -1,11 +1,64 @@
-import React from 'react'
+import React,{useContext, useEffect,useState} from 'react'
 import "./rightbar.css"
 import { Users } from "../../dummyData";
 import OnlineFriends from '../OnlineFriends/OnlineFriends';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthContext';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
+import { Check } from '@mui/icons-material';
+
 export default function RightBar({ user }) {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const [friends, setfriends] = useState([]);
+    const {user:currentUser,dispatch} = useContext(AuthContext)
+    const [follow, setFollow] = useState(false);
+    useEffect(()=>{
+        const getAllDeaials = async() =>{
 
+            const cuser = await axios.get("http://dipsocials.herokuapp.com/api/user/getalldetials/"+currentUser._id); 
+            if(cuser.data.followings.includes(user._id)){
+                setFollow(true)
+            }
+
+        }
+        getAllDeaials()
+
+        // setFollow(currentUser.followings.includes(user?.id));
+    })
+    useEffect(() => {
+        const getFiends = async ()=>{
+            try {
+                if(user){
+                // console.log("user Id " + user._id);
+
+                    const friendsList = await axios.get("http://dipsocials.herokuapp.com/api/user/followrs/"+user._id)
+                    setfriends(friendsList.data);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getFiends();
+    },[user]);
+    const handleclick = async() =>{
+        try {
+            if(follow){
+                await axios.put("http://dipsocials.herokuapp.com/api/user/" + user._id +"/unfollow",{userId:currentUser._id})
+                dispatch({type:"UNFOLLOW",payloaf:user._id});
+            }
+            else{
+                await axios.put("http://dipsocials.herokuapp.com/api/user/" + user._id +"/follow",{userId:currentUser._id})
+                dispatch({type:"FOLLOW",payloaf:user._id});
+            }
+        } catch (error) {
+            
+        }
+        setFollow(!follow)
+    }
     const HomerighrBar = () => {
+        
         return (
             <>
                 <div className="birthdayContainer">
@@ -21,15 +74,23 @@ export default function RightBar({ user }) {
                     {Users.map(u => (
                         <OnlineFriends key={u.id} user={u} />
                     ))}
-
-
-                </ul>
+                    
+            </ul>
             </>
         )
     }
     const ProfileRightbar = () => {
         return (
             <>
+            {user.username !==   currentUser.username && (
+                <button className='rightbarFollowButton' onClick={handleclick}>
+                    {follow ? "unlfollow" : "Follow"}
+                    {follow ? <RemoveIcon/> : <AddIcon/>
+                    }
+                    
+                </button>
+            )}
+            {/* <h1>{user._id}</h1> */}
                 <h3 className='rightbartitle'>User Information</h3>
                 <div className="rightbarInfo">
 
@@ -50,14 +111,19 @@ export default function RightBar({ user }) {
                 </div>
                 <h3 className='rightbartitle'>User Friends</h3>
                 <div className="userfollowings">
+                    {friends.map(friend=>(
+                        <Link to={"/profile/"+friend.username} key={friend._id}>
 
-                    <div className="userfollowing">
-                        <img src={`${PF}person/1.jpeg`} alt="" className='userfollowingImg' />
-                        <span className="userfollwingnams">John Ceaser</span>
-                    </div>
+                        <div className="userfollowing" >
+                            <img src={friend.profilePicture? friend.profilePicture : `${PF}person/noAvatar.png`} alt="" className='userfollowingImg' />
+                            <span className="userfollwingnams">{friend.username}</span>
+                        </div>
+                        </Link>
+                    ))}
 
                   
                 </div>
+                
             </>
         )
     }
@@ -72,3 +138,11 @@ export default function RightBar({ user }) {
         </div>
     )
 }
+
+
+
+
+
+
+
+

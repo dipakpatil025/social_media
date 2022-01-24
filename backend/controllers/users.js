@@ -4,17 +4,15 @@ const router = require("../routes/users");
 
 
 
-exports.home = (req, res) => {
-    res.send("hello babu");
-}
+
 
 
 // Update User
 exports.update = async (req, res) => {
 
     // console.log(req.user);
-    
-    
+
+
     if (req.body.userId === req.params.id || req.body.isAdmin) {
         try {
             if (req.body.password) {
@@ -61,13 +59,13 @@ exports.getUser = async (req, res) => {
     const userId = req.query.userId;
     const username = req.query.username;
     try {
-        console.log("heeeeeeeeheeeeeeee");
-        
+        // console.log("heeeeeeeeheeeeeeee");
+
         const user = (userId)
             ? await User.findOne({ userId: userId })
             : await User.findOne({ username: username });
-        
-            res.status(200).json(user)
+
+        res.status(200).json(user)
     } catch (error) {
 
         res.status(403).json({ success: false, message: error.message });
@@ -124,5 +122,84 @@ exports.unfollow = async (req, res) => {
     }
     else {
         res.status(403).json({ success: false, message: "You cant follow your self" });
+    }
+}
+// exports.getfollowers = async (req, res) => {
+// try {
+//     res.json("hello baby");
+//     //     const user = await User.findById(req.params.userId);
+//     //     const friends = await Promise.all(
+//     //         user.followings.map(friendId=>{
+//     //             return user.findById(friendId);
+//     //         })
+//     //     )
+//     //     let friendList = [];
+//     //     friends.map(friend=>{
+//     //         const {_id,username,profilePicture} = friend;
+//     //         friendList.push({_id,username,profilePicture})
+//     //     })
+//     //     res.status(200).json(friendList);
+
+// } catch (error) {
+//     res.status(403).json({ success: false, message: error.message });
+// }
+// }
+
+// exports.getfollowers = async (req, res) => {
+//     try {
+//         res.json("hello baby");
+//         //     const user = await User.findById(req.params.userId);
+//         //     const friends = await Promise.all(
+//         //         user.followings.map(friendId=>{
+//         //             return user.findById(friendId);
+//         //         })
+//         //     )
+//         //     let friendList = [];
+//         //     friends.map(friend=>{
+//         //         const {_id,username,profilePicture} = friend;
+//         //         friendList.push({_id,username,profilePicture})
+//         //     })
+//         //     res.status(200).json(friendList);
+
+//     } catch (error) {
+//         res.status(403).json({ success: false, message: error.message });
+//     }
+// }
+
+exports.getfollowers = async (req, res) => {
+    try {
+
+        const user = await User.findById(req.params.userId);
+        const friends = await Promise.all(
+            user.followings.map(friendId => {
+                return User.findById(friendId);
+            })
+        )
+        let friendList = [];
+        friends.map(friend => {
+            const { _id, username, profilePicture } = friend;
+            friendList.push({ _id, username, profilePicture })
+        })
+        res.status(200).json(friendList);
+
+    } catch (error) {
+        res.status(403).json({ success: false, message: error.message });
+    }
+}
+
+exports.dipak = () => {
+    res.send("dipak")
+}
+
+exports.getAllDetials = async (req, res) => {
+    try {
+        // res.send(req.params.id)
+        // console.log("this is here " + req.params);
+        // const data = await User.findById({ _id: "61e6b82d24285ba91d97d649" });
+        const data = await User.findById(req.params.id);
+
+        res.status(200).json(data);
+    } catch (error) {
+        res.status(403).json({ success: false, message: error.message });
     }
 }

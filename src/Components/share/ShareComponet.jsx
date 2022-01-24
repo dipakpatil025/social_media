@@ -5,6 +5,7 @@ import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { AuthContext } from '../../Context/AuthContext';
+import CancelIcon from '@mui/icons-material/Cancel';
 import axios from 'axios';
 export default function ShareComponet() {
     const {user}  = useContext(AuthContext);
@@ -33,14 +34,14 @@ export default function ShareComponet() {
             
             console.log(data);
             try {
-                await axios.post("http://localhost:5000/api/upload",data);
+                await axios.post("http://dipsocials.herokuapp.com/api/upload",data);
             } catch (error) {
                 console.log(error);
             }
 
         }
         try {
-            await axios.post("http://localhost:5000/api/posts",newPost)
+            await axios.post("http://dipsocials.herokuapp.com/api/posts",newPost)
             window.location.reload();
         } catch (error) {
             
@@ -56,6 +57,14 @@ export default function ShareComponet() {
                     <input placeholder={"What's in your mind "+ user.username+" ?"} className="shareInput" ref={dec}/>
                 </div>
                 <hr className="shareHr" />
+                {file &&(
+                    <div className="shareImageConatine">
+                        <img className="shareImg" src={URL.createObjectURL(file)} alt="" />
+                        <CancelIcon className='shareCancelImg' onClick={()=>{
+                            setfile(null)
+                        }}/>
+                    </div>
+                )}
                 <form className="shareBottom" onSubmit={submitHandler}>
                     <label htmlFor='file' className="shareOptions">
                         <div className="shareOption">

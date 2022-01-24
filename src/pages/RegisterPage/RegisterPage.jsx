@@ -1,7 +1,7 @@
 import { Alert } from '@mui/material';
 import axios from 'axios';
 import React,{useState,useRef} from 'react'
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import "./registerPage.css"
 
 export default function RegisterPage() {
@@ -24,7 +24,7 @@ export default function RegisterPage() {
                 password    : password.current.value,
             }
             try {
-                const res = await axios.post("http://localhost:5000/api/auth/register",user)
+                const res = await axios.post("http://dipsocials.herokuapp.com/api/auth/register",user)
                 history.push("/login");
             } catch (error) {
                 console.log(error);   
@@ -57,7 +57,10 @@ export default function RegisterPage() {
                                         
                                 <button className="loginButtton" type='submit' >Sign Up</button>
                                 <span className='logonForgot' >Forgot Password?</span>
+                                <Link to="/login">
+
                                 <button className="loginRegister">Login into Account</button>
+                                </Link>
                               
 
                           </div>

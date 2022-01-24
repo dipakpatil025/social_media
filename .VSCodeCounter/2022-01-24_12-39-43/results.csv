@@ -1,0 +1,40 @@
+"filename", "language", "JavaScript", "JavaScript React", "CSS", "XML", "comment", "blank", "total"
+"d:\REACT JS\Projects\social_media\src\App.css", "CSS", 0, 0, 0, 0, 0, 1, 1
+"d:\REACT JS\Projects\social_media\src\App.js", "JavaScript", 43, 0, 0, 0, 0, 13, 56
+"d:\REACT JS\Projects\social_media\src\App.test.js", "JavaScript", 7, 0, 0, 0, 0, 2, 9
+"d:\REACT JS\Projects\social_media\src\Components\CloseFrideds\CloseFriends.css", "CSS", 0, 0, 12, 0, 0, 1, 13
+"d:\REACT JS\Projects\social_media\src\Components\CloseFrideds\CloseFriends.jsx", "JavaScript React", 0, 15, 0, 0, 0, 2, 17
+"d:\REACT JS\Projects\social_media\src\Components\FeedPost\FeedPost.jsx", "JavaScript React", 0, 77, 0, 0, 4, 13, 94
+"d:\REACT JS\Projects\social_media\src\Components\FeedPost\post.css", "CSS", 0, 0, 67, 0, 0, 2, 69
+"d:\REACT JS\Projects\social_media\src\Components\OnlineFriends\OnlineFriends.jsx", "JavaScript React", 0, 16, 0, 0, 0, 2, 18
+"d:\REACT JS\Projects\social_media\src\Components\OnlineFriends\onlineFriends.css", "CSS", 0, 0, 28, 0, 0, 3, 31
+"d:\REACT JS\Projects\social_media\src\Components\Topbar\Topbar.js", "JavaScript", 52, 0, 0, 0, 0, 1, 53
+"d:\REACT JS\Projects\social_media\src\Components\Topbar\topbar.css", "CSS", 0, 0, 81, 0, 4, 3, 88
+"d:\REACT JS\Projects\social_media\src\Components\feed\FeedSection.jsx", "JavaScript React", 0, 31, 0, 0, 4, 3, 38
+"d:\REACT JS\Projects\social_media\src\Components\feed\feed.css", "CSS", 0, 0, 6, 0, 0, 0, 6
+"d:\REACT JS\Projects\social_media\src\Components\rightbar\RightBar.jsx", "JavaScript React", 0, 119, 0, 0, 2, 28, 149
+"d:\REACT JS\Projects\social_media\src\Components\rightbar\rightbar.css", "CSS", 0, 0, 83, 0, 0, 2, 85
+"d:\REACT JS\Projects\social_media\src\Components\share\ShareComponet.jsx", "JavaScript React", 0, 76, 0, 0, 1, 14, 91
+"d:\REACT JS\Projects\social_media\src\Components\share\share.css", "CSS", 0, 0, 66, 0, 1, 1, 68
+"d:\REACT JS\Projects\social_media\src\Components\sidebar\Sidebar.jsx", "JavaScript React", 0, 62, 0, 0, 0, 6, 68
+"d:\REACT JS\Projects\social_media\src\Components\sidebar\sidebar.css", "CSS", 0, 0, 50, 0, 1, 2, 53
+"d:\REACT JS\Projects\social_media\src\Context\AuthAction.js", "JavaScript", 19, 0, 0, 0, 0, 3, 22
+"d:\REACT JS\Projects\social_media\src\Context\AuthContext.js", "JavaScript", 21, 0, 0, 0, 30, 4, 55
+"d:\REACT JS\Projects\social_media\src\Context\AuthReducer.js", "JavaScript", 43, 0, 0, 0, 0, 9, 52
+"d:\REACT JS\Projects\social_media\src\apiCalls\apicall.js", "JavaScript", 12, 0, 0, 0, 0, 1, 13
+"d:\REACT JS\Projects\social_media\src\dummyData.js", "JavaScript", 138, 0, 0, 0, 0, 1, 139
+"d:\REACT JS\Projects\social_media\src\index.css", "CSS", 0, 0, 12, 0, 0, 2, 14
+"d:\REACT JS\Projects\social_media\src\index.js", "JavaScript", 15, 0, 0, 0, 3, 3, 21
+"d:\REACT JS\Projects\social_media\src\logo.svg", "XML", 0, 0, 0, 1, 0, 0, 1
+"d:\REACT JS\Projects\social_media\src\pages\HomePage\Home.jsx", "JavaScript React", 0, 18, 0, 0, 0, 2, 20
+"d:\REACT JS\Projects\social_media\src\pages\HomePage\home.css", "CSS", 0, 0, 4, 0, 0, 0, 4
+"d:\REACT JS\Projects\social_media\src\pages\LoginPage\LoginPage.jsx", "JavaScript React", 0, 38, 0, 0, 1, 5, 44
+"d:\REACT JS\Projects\social_media\src\pages\LoginPage\loginpage.css", "CSS", 0, 0, 80, 0, 1, 3, 84
+"d:\REACT JS\Projects\social_media\src\pages\Profile\Profile.jsx", "JavaScript React", 0, 44, 0, 0, 1, 11, 56
+"d:\REACT JS\Projects\social_media\src\pages\Profile\profile.css", "CSS", 0, 0, 41, 0, 0, 4, 45
+"d:\REACT JS\Projects\social_media\src\pages\RegisterPage\RegisterPage.jsx", "JavaScript React", 0, 64, 0, 0, 1, 11, 76
+"d:\REACT JS\Projects\social_media\src\pages\RegisterPage\registerPage.css", "CSS", 0, 0, 80, 0, 1, 3, 84
+"d:\REACT JS\Projects\social_media\src\pages\temp\Dipak.jsx", "JavaScript React", 0, 8, 0, 0, 0, 2, 10
+"d:\REACT JS\Projects\social_media\src\reportWebVitals.js", "JavaScript", 12, 0, 0, 0, 0, 2, 14
+"d:\REACT JS\Projects\social_media\src\setupTests.js", "JavaScript", 1, 0, 0, 0, 4, 1, 6
+"Total", "-", 363, 568, 610, 1, 59, 166, 1767

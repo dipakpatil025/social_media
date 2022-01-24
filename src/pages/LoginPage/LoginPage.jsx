@@ -7,8 +7,8 @@ import "./loginpage.css"
 export default function LoginPage() {
         const email = useRef();
         const password  = useRef();  
-    const {user,isFetching,error,dispatch} = useContext(AuthContext)
-    const handleClick = (e) =>{
+        const {user,isFetching,error,dispatch} = useContext(AuthContext)
+        const handleClick = (e) =>{
         e.preventDefault();
         // console.log(email.current.value);
         login_call({email : email.current.value, password : password.current.value},dispatch)

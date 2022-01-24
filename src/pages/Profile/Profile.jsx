@@ -18,12 +18,12 @@ export default function Profile() {
 
     useEffect(() => {
         const fetcUser = async()=>{
-            const res = await axios.get(`http://localhost:5000/api/user/?username=${params.username}`)
+            const res = await axios.get(`http://dipsocials.herokuapp.com/api/user/?username=${params.username}`)
             setUser(res.data);
             
         }
         fetcUser();
-    },[]);
+    },[params.username]);
      
     
     return (

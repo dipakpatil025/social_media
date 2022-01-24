@@ -14,19 +14,19 @@ export default function FeedSection({username}) {
         const fetcPost = async()=>{
             // console.log(username);
             const res = (username) 
-            ? await axios.get("http://localhost:5000/api/posts/profile/"+username)
-            : await axios.get("http://localhost:5000/api/posts/timeline/"+user.user._id)
+            ? await axios.get("http://dipsocials.herokuapp.com/api/posts/profile/"+username)
+            : await axios.get("http://dipsocials.herokuapp.com/api/posts/timeline/"+user.user._id)
             setPost(res.data.sort((p1,p2)=>{
                 return new Date(p2.createdAt) -  new Date(p1.createdAt);
             }));
         }
         fetcPost();
-    }, [])
+    }, [username,user.user._id])
 
     return (
         <div className='feed'>
             <div className="feedwrapper">
-                <ShareComponet/>
+                {username === user.username && <ShareComponet/>}
                 {posts.map((p)=>{
                     // console.log(p);
                     return <FeedPost key={p._id} post={p}/>

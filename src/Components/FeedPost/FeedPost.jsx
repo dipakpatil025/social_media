@@ -17,6 +17,7 @@ export default function FeedPost({post}) {
     const [like, setLike] = useState(post.likes.length);
     const [islike, setislike] = useState(false);
     const {user:currentUser} = useContext(AuthContext)
+    const [postUserName, setpostrUserName] = useState("");
     // console.log(post._id);
 
     useEffect(() => {
@@ -25,8 +26,10 @@ export default function FeedPost({post}) {
      
     useEffect(() => {
         const fetcUser = async()=>{
-            const res = await axios.get(`http://localhost:5000/api/user?userId=${post.userId}`)
+            const res = await axios.get(`http://dipsocials.herokuapp.com/api/user?userId=${post.userId}`)
             // console.log(post);  
+            const cuser = await axios.get("http://dipsocials.herokuapp.com/api/user/getalldetials/"+post.userId); 
+            setpostrUserName(cuser.data.username);
             setUser(res.data);
         }
         fetcUser();
@@ -38,7 +41,7 @@ export default function FeedPost({post}) {
         setLike(islike?like-1:like+1);
         setislike(!islike); 
         try {
-            axios.put("http://localhost:5000/api/posts/"+post._id+"/like",{userId:currentUser._id})
+            axios.put("http://dipsocials.herokuapp.com/api/posts/"+post._id+"/like",{userId:currentUser._id})
         } catch (error) {
             
         }
@@ -54,7 +57,8 @@ export default function FeedPost({post}) {
                         <Link to={`profile/${user.username}`} >
                         <img className='postProfileImage' src={user.profilePicture? PF+user.profilePicture  : PF+"person/noAvatar.png"} alt="" />
                         </Link>
-                        <span className="postUserName">{user.username}</span>
+                        {/* <span className="postUserName">{user.username}</span> */}
+                        <span className="postUserName">{postUserName}</span>
                         <span className="postDate">{format( post.createdAt)}</span>
                     </div>
                     <div className="postTopRight">

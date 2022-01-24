@@ -15,39 +15,41 @@ import { AuthContext } from './Context/AuthContext'
 
 export default function App() {
   const { user } = useContext(AuthContext)
+  const data = localStorage.getItem("user");
+ 
   return (
-    <>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            {user ? <Home /> : <RegisterPage />}
-          </Route>
+  <>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          {user ? <Home /> : <RegisterPage />}
+        </Route>
 
-          <Route path="/register">
-            {user ?
-              <Redirect to="/" /> : <LoginPage />
-            }
+        <Route path="/register">
+          {user ?
+            <Redirect to="/" /> : <LoginPage />
+          }
 
-          </Route>
+        </Route>
 
-          <Route path="/login">
-            {user ?
-              <Redirect to="/" /> : <LoginPage />
-            }
-          </Route>
+        <Route path="/login">
+          {user ?
+            <Redirect to="/" /> : <LoginPage />
+          }
+        </Route>
 
-          <Route path="/profile/:username">
-            <Profile />
-          </Route>
+        <Route path="/profile/:username">
+          <Profile />
+        </Route>
 
 
-          <Route path="/register">
-            <RegisterPage />
-          </Route>
+        <Route path="/register">
+          <RegisterPage />
+        </Route>
 
-        </Switch>
-      </Router>
+      </Switch>
+    </Router>
 
-    </>
+  </>
   )
 }

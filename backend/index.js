@@ -11,7 +11,7 @@ const cors = require('cors')
 const multer = require('multer')
 const path = require('path');
 require('dotenv').config();
-
+const port = process.env.PORT ||  5000;
 app.use(cors())
 // DB Connect
 connectDB();
@@ -20,7 +20,7 @@ app.use("/images", express.static(path.join(__dirname, "public/images")))
 // middleware
 app.use(express.json());
 app.use(helmet());
-// app.use(morgan("common"));
+app.use(morgan("common"));
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -47,6 +47,6 @@ app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
 
 
-app.listen(5000, () => {
+app.listen(port, () => {
     console.log(`server is running`);
 })
